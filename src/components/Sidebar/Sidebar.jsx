@@ -8,13 +8,13 @@ const Sidebar = () => {
         <Container  >
             <Col md={3} className="sidebar p-0">
                 <Nav defaultActiveKey="#notas" className="flex-column">
-                    <Nav.Link as={Link} to="/notas" className="sidebar-link">
+                    <Nav.Link as={Link} to="/" className="sidebar-link">
                         Notas
                     </Nav.Link>
                     <Nav.Link as={Link} to="/recordatorios" className="sidebar-link">
                         Recordatorios
                     </Nav.Link>
-                    <Nav.Link as={Link} to="/editar-tags" className="sidebar-link">
+                    <Nav.Link as={Link} to="/editar-etiquetas" className="sidebar-link">
                         Editar tags
                     </Nav.Link>
                     <Nav.Link as={Link} to="/archivadas" className="sidebar-link">
@@ -29,4 +29,4 @@ const Sidebar = () => {
     );
 };
 
-export default Sidebar;
+export default Sidebar

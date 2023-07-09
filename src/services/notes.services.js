@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios from "axios"
 
 class NoteService {
 
@@ -14,5 +14,5 @@ class NoteService {
     }
 }
 
-const notesService = new NoteService
+const notesService = new NoteService()
 export default notesService

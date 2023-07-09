@@ -1,11 +1,12 @@
-import React from 'react';
-import { Navbar, Nav, Form } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
-import keepLogo from '../../assets/images/keep_logo.png';
-import searchIcon from '../../assets/images/icons8-search-50.png';
-import './Navigation.css';
+import React from 'react'
+import { Navbar, Nav, Form } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
+import keepLogo from '../../assets/images/keep_logo.png'
+import searchIcon from '../../assets/images/icons8-search-50.png'
+import './Navigation.css'
 
 const Navigation = () => {
+
     return (
         <Navbar expand="lg" className="bg-body-tertiary mb-5" fixed="top">
             <Navbar.Brand className="logo">
@@ -43,7 +44,7 @@ const Navigation = () => {
                 </Nav>
             </Navbar.Collapse>
         </Navbar>
-    );
-};
+    )
+}
 
-export default Navigation;
+export default Navigation
