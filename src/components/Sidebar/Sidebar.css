@@ -1,17 +1,18 @@
- .sidebar {
-     height: 100vh;
-     color: black;
-     font-family: Arial, sans-serif;
-     font-size: 15px;
-     padding: 20px;
-     font-weight: 500;
- }
+.sidebar {
+    height: 100vh;
+    width: 200px;
+    color: black;
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    padding: 20px;
+    font-weight: 500;
+}
 
- .sidebar-link {
-     color: black;
-     margin-bottom: 20px;
- }
+.sidebar-link {
+    color: black;
+    margin-bottom: 20px;
+}
 
- .content {
-     height: 100vh;
- }
+.content {
+    height: 100vh;
+}
