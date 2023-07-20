@@ -9,7 +9,6 @@ const NewNotePage = () => {
 
         <Container>
             <NewNoteForm />
-
         </Container>
     )
 

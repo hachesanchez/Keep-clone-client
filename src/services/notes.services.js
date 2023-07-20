@@ -12,6 +12,12 @@ class NoteService {
     getAllNotes() {
         return this.api.get('/getAllNotes')
     }
+
+    saveNote(noteData) {
+        return this.api.post('/saveNote', noteData)
+    }
+
+
 }
 
 const notesService = new NoteService()
