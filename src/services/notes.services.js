@@ -13,6 +13,10 @@ class NoteService {
         return this.api.get('/getAllNotes')
     }
 
+    getOneNote(noteId) {
+        return this.api.get(`/getOneNote/${noteId}`)
+    }
+
     saveNote(noteData) {
         return this.api.post('/saveNote', noteData)
     }

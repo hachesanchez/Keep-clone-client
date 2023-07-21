@@ -17,7 +17,6 @@ const HomePage = () => {
     return (
 
         <Container>
-
             <Row className="">
                 <Col md={2} >
                     <Sidebar />
