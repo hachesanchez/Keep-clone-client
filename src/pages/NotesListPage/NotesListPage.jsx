@@ -4,8 +4,7 @@ import notesService from "../../services/notes.services"
 import NoteCard from "../../components/Notes/NotesList/NoteCard"
 import "./NotesListPage.css"
 
-const NotesListPage = () => {
-    const [notes, setNotes] = useState([])
+const NotesListPage = ({ notes, setNotes }) => {
 
     useEffect(() => {
         loadNotes()
@@ -16,10 +15,10 @@ const NotesListPage = () => {
             .getAllNotes()
             .then(({ data }) => {
                 setNotes(data)
-                console.log("soy las notes--------", data)
             })
             .catch((err) => console.log(err))
     }
+
 
     return (
 

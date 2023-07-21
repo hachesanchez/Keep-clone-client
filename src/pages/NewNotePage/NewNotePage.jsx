@@ -3,13 +3,13 @@ import "./NewNotePage.css"
 import NewNoteForm from "../../components/Notes/NewNoteForm/NewNoteForm"
 
 
-const NewNotePage = () => {
+const NewNotePage = ({ updateNotes }) => {
 
     return (
 
-        <Container>
-            <NewNoteForm />
-        </Container>
+        <div className="new-note-page-container">
+            <NewNoteForm updateNotes={updateNotes} />
+        </div>
     )
 
 }

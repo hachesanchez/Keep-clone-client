@@ -1,7 +1,7 @@
 import { Form, Button } from "react-bootstrap"
-import { useState } from "react";
+import { useState } from "react"
 import "./NewNoteForm.css"
-import notesService from "../../../services/notes.services";
+import notesService from "../../../services/notes.services"
 
 
 const NewNoteForm = ({ updateNotes }) => {
@@ -25,25 +25,23 @@ const NewNoteForm = ({ updateNotes }) => {
     const handleSubmit = e => {
         e.preventDefault()
         if (noteData.title.trim() === "" && noteData.body.trim() === "") {
-            alert("Los campos de título y nota no pueden estar vacíos.");
-            return;
+            alert("Los campos de título y nota no pueden estar vacíos.")
+            return
         }
 
         notesService
             .saveNote(noteData)
-            .then(() => {
-                updateNotes()
+            .then(({ data }) => {
                 setNoteData({ title: "", body: "" })
+                updateNotes(data)
             })
-            .catch((err) => console.log(err));
-    };
+            .catch((err) => console.log(err))
+    }
 
     // const handleKeyPress = e => {
     //     e.key === 'Enter' &&
     //         handleSubmit()
     // }
-
-
 
 
     return (
@@ -81,12 +79,12 @@ const NewNoteForm = ({ updateNotes }) => {
                 </Form.Group>
 
                 <div className="flex">
-                    <Button variant="dark mt-4" type="submit">Añadir</Button>
+                    <Button variant="dark mt-4 " type="submit">Añadir</Button>
                 </div>
 
             </Form>
         </div>
-    );
-};
+    )
+}
 
-export default NewNoteForm;
+export default NewNoteForm
