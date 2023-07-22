@@ -21,6 +21,10 @@ class NoteService {
         return this.api.post('/saveNote', noteData)
     }
 
+    deleteNote(noteId) {
+        return this.api.delete(`/deleteNote/${noteId}`)
+    }
+
 
 }
 
