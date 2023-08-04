@@ -1,17 +1,19 @@
 import { useEffect, useState } from "react"
 import { Container, Row, Col } from "react-bootstrap"
 import notesService from "../../services/notes.services"
-import NoteCard from "../../components/Notes/NotesList/NoteCard"
+import NoteCard from "../../components/Notes/NoteCard/NoteCard"
 import "./NotesListPage.css"
-import { useParams } from "react-router-dom"
+
 
 const NotesListPage = ({ notes, setNotes }) => {
 
-    const [deletedNote, setDeletedNote] = useState()
+
 
     useEffect(() => {
         loadNotes()
     }, [])
+
+
 
     const loadNotes = () => {
         notesService
@@ -22,18 +24,16 @@ const NotesListPage = ({ notes, setNotes }) => {
             .catch((err) => console.log(err))
     }
 
+
     const deleteNote = (id) => {
-        console.log('Deleting note with id:', id);
         notesService
             .deleteNote(id)
             .then(() => {
-                // Filtrar la nota eliminada de la lista de notas
-                const updatedNotes = notes.filter((note) => note._id !== id);
-                console.log('Updated notes after deletion:', updatedNotes);
-                setNotes(updatedNotes); // Actualizar el estado con la nueva lista de notas después de la eliminación
+                const updatedNotes = notes.filter((note) => note._id !== id)
+                setNotes(updatedNotes)
             })
-            .catch((err) => console.log(err));
-    };
+            .catch((err) => console.log(err))
+    }
 
 
     return (

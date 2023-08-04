@@ -1,22 +1,42 @@
 import { useState } from 'react'
 import { Button, Card, Modal } from 'react-bootstrap'
 import NoteDetails from '../NoteDetails/NoteDetails'
+import editIcon from '../../../assets/images/icons8-edit-32.png'
 import deleteIcon from '../../../assets/images/icons8-bin-32.png'
 import reminderIcon from '../../../assets/images/icons8-notification-32.png'
+import notesService from '../../../services/notes.services'
 import './NoteCard.css'
+
+
 
 const NoteCard = ({ _id, title, body, deleteNote }) => {
 
+
     const [showModal, setShowModal] = useState(false)
+
+    // const [noteData, setNoteData] = useState({
+    //     title: '',
+    //     body: ''
+    // })
+
 
     const handleModalOpen = () => {
         setShowModal(true)
     }
+
     const handleModalClose = () => {
         setShowModal(false)
+
+        // notesService
+        //     .editNote(_id, noteData)
+        //     .then({data})
+        //     .catch((err) => console.log(err))
     }
 
+
+
     return (
+
         <>
             <Card className='p-1 mb-3' onClick={handleModalOpen}>
                 <Card.Title className='p-3'>
@@ -26,6 +46,7 @@ const NoteCard = ({ _id, title, body, deleteNote }) => {
                     <p className='card-body'>{body}</p>
                 </Card.Text>
             </Card>
+
 
             <Modal
                 show={showModal}
@@ -42,15 +63,18 @@ const NoteCard = ({ _id, title, body, deleteNote }) => {
                         <Button variant='link'>
                             <img src={reminderIcon} alt='Reminder' className='reminder-icon' />
                         </Button>
+                        <Button variant='link'>
+                            <img src={editIcon} alt='Edit note' className='edit-icon' />
+                        </Button>
                         <Button variant='link' onClick={() => deleteNote(_id)}>
                             <img src={deleteIcon} alt='Delete' className='delete-icon' />
                         </Button>
                         <Button className='close-modal-btn' variant='link' onClick={handleModalClose} >Cerrar</Button>
                     </div>
                 </Modal.Body >
-
             </Modal >
         </>
+
     )
 }
 

@@ -35,6 +35,11 @@
     justify-content: flex-end;
 }
 
+.edit-icon {
+    width: 20px;
+    height: 20px;
+}
+
 .delete-icon {
     width: 20px;
     height: 20px;
