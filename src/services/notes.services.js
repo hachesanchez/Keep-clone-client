@@ -22,7 +22,7 @@ class NoteService {
     }
 
     editNote(noteId, noteData) {
-        return this.api.put(`/editNote${noteId}`, noteData)
+        return this.api.put(`/editNote/${noteId}`, noteData)
     }
 
     deleteNote(noteId) {

@@ -14,7 +14,6 @@ const NotesListPage = ({ notes, setNotes }) => {
     }, [])
 
 
-
     const loadNotes = () => {
         notesService
             .getAllNotes()

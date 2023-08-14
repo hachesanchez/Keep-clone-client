@@ -2,7 +2,6 @@ import { Route, Routes } from 'react-router-dom'
 import NotesListPage from '../pages/NotesListPage/NotesListPage'
 import NewNotePage from '../pages/NewNotePage/NewNotePage'
 import HomePage from '../pages/HomePage/HomePage'
-import ChartJsPage from '../pages/ChartJsPage/ChartJsPage'
 
 const AppRoutes = () => {
     return (
@@ -13,7 +12,7 @@ const AppRoutes = () => {
             <Route path='/registro' element={<h1>REGISTRO</h1>} />
             <Route path='/' element={<HomePage />} />
             <Route path='/notas' element={<NotesListPage />} />
-            <Route path='/recordatorios' element={<ChartJsPage />} />
+            <Route path='/recordatorios' element={<h1>RECORDATORIOS</h1>} />
             <Route path='/archivadas' element={<h1>ARCHIVADAS</h1>} />
             <Route path='/papelera' element={<h1>BASURILLA</h1>} />
             <Route path='/etiqueta/:id' element={<h1>TAG WHATEVER</h1>} />

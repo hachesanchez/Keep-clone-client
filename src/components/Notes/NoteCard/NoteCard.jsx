@@ -4,7 +4,7 @@ import NoteDetails from '../NoteDetails/NoteDetails'
 import editIcon from '../../../assets/images/icons8-edit-32.png'
 import deleteIcon from '../../../assets/images/icons8-bin-32.png'
 import reminderIcon from '../../../assets/images/icons8-notification-32.png'
-import notesService from '../../../services/notes.services'
+import NoteEditForm from '../NoteEditForm/NoteEditForm'
 import './NoteCard.css'
 
 
@@ -13,24 +13,22 @@ const NoteCard = ({ _id, title, body, deleteNote }) => {
 
 
     const [showModal, setShowModal] = useState(false)
-
-    // const [noteData, setNoteData] = useState({
-    //     title: '',
-    //     body: ''
-    // })
+    const [editing, setEditing] = useState(false)
 
 
     const handleModalOpen = () => {
         setShowModal(true)
     }
 
+
     const handleModalClose = () => {
         setShowModal(false)
+        setEditing(false)
+    }
 
-        // notesService
-        //     .editNote(_id, noteData)
-        //     .then({data})
-        //     .catch((err) => console.log(err))
+
+    const handleEditNote = () => {
+        setEditing(true)
     }
 
 
@@ -56,14 +54,18 @@ const NoteCard = ({ _id, title, body, deleteNote }) => {
                 dialogClassName='custom-modal'
             >
                 <Modal.Body>
-                    <NoteDetails
-                        title={title}
-                        body={body} />
+                    {
+                        editing ? (
+                            <NoteEditForm initialTitle={title} initialBody={body} noteId={_id} />
+                        ) : (
+                            <NoteDetails title={title} body={body} />
+                        )
+                    }
                     <div className='note-icons'>
                         <Button variant='link'>
                             <img src={reminderIcon} alt='Reminder' className='reminder-icon' />
                         </Button>
-                        <Button variant='link'>
+                        <Button variant='link' onClick={() => handleEditNote()}>
                             <img src={editIcon} alt='Edit note' className='edit-icon' />
                         </Button>
                         <Button variant='link' onClick={() => deleteNote(_id)}>
