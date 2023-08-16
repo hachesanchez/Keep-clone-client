@@ -8,29 +8,24 @@ import NoteEditForm from '../NoteEditForm/NoteEditForm'
 import './NoteCard.css'
 
 
-
-const NoteCard = ({ _id, title, body, deleteNote }) => {
-
+const NoteCard = ({ _id, title, body, deleteNote, updateNoteInList }) => {
 
     const [showModal, setShowModal] = useState(false)
     const [editing, setEditing] = useState(false)
-
 
     const handleModalOpen = () => {
         setShowModal(true)
     }
 
-
     const handleModalClose = () => {
+        updateNoteInList({ _id, title, body })
         setShowModal(false)
         setEditing(false)
     }
 
-
     const handleEditNote = () => {
         setEditing(true)
     }
-
 
 
     return (
@@ -45,7 +40,6 @@ const NoteCard = ({ _id, title, body, deleteNote }) => {
                 </Card.Text>
             </Card>
 
-
             <Modal
                 show={showModal}
                 onHide={handleModalClose}
@@ -54,13 +48,16 @@ const NoteCard = ({ _id, title, body, deleteNote }) => {
                 dialogClassName='custom-modal'
             >
                 <Modal.Body>
-                    {
-                        editing ? (
-                            <NoteEditForm initialTitle={title} initialBody={body} noteId={_id} />
-                        ) : (
-                            <NoteDetails title={title} body={body} />
-                        )
-                    }
+                    {editing ? (
+                        <NoteEditForm
+                            initialTitle={title}
+                            initialBody={body}
+                            noteId={_id}
+                            updateNoteInList={updateNoteInList}
+                        />
+                    ) : (
+                        <NoteDetails title={title} body={body} onClick={handleEditNote} />
+                    )}
                     <div className='note-icons'>
                         <Button variant='link'>
                             <img src={reminderIcon} alt='Reminder' className='reminder-icon' />
@@ -71,12 +68,19 @@ const NoteCard = ({ _id, title, body, deleteNote }) => {
                         <Button variant='link' onClick={() => deleteNote(_id)}>
                             <img src={deleteIcon} alt='Delete' className='delete-icon' />
                         </Button>
-                        <Button className='close-modal-btn' variant='link' onClick={handleModalClose} >Cerrar</Button>
+                        <Button
+                            className='close-modal-btn'
+                            variant='link'
+                            onClick={() => {
+                                handleModalClose()
+                            }}
+                        >
+                            Cerrar
+                        </Button>
                     </div>
-                </Modal.Body >
-            </Modal >
+                </Modal.Body>
+            </Modal>
         </>
-
     )
 }
 

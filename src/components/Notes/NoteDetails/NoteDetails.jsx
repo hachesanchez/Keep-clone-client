@@ -1,13 +1,14 @@
 import './NoteDetails.css'
-import { Card } from 'react-bootstrap'
 
 
-const NoteDetails = ({ ...note }) => {
+const NoteDetails = ({ title, body, onClick }) => {
+
 
     return (
-        <div>
-            <h3 className='note-title-modal'>{note.title}</h3>
-            <p>{note.body}</p>
+
+        <div className='note-modal' onClick={onClick}>
+            <h3 className='note-title-modal'>{title}</h3>
+            <p>{body}</p>
         </div>
     )
 }

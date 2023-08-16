@@ -1,4 +1,9 @@
+.note-modal {
+    padding: 25px;
+}
+
 .note-title-modal {
     font-size: 1.2em;
-    color: rgb(73, 73, 73);
+    color: #494949;
+    margin-bottom: 30px;
 }

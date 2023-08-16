@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react"
-import { Container, Row, Col } from "react-bootstrap"
+import { useEffect } from "react"
+import { Row, Col } from "react-bootstrap"
 import notesService from "../../services/notes.services"
 import NoteCard from "../../components/Notes/NoteCard/NoteCard"
 import "./NotesListPage.css"
@@ -12,6 +12,16 @@ const NotesListPage = ({ notes, setNotes }) => {
     useEffect(() => {
         loadNotes()
     }, [])
+
+
+    // const updateNoteInList = (updatedNote) => {
+    //     const updatedNotes = notes.map(note => note._id === updatedNote._id ? updatedNote : note)
+    //     setNotes(updatedNotes)
+    // }
+    const updateNoteInList = (updatedNoteData) => {
+        const updatedNotes = notes.map(note => note._id === updatedNoteData._id ? updatedNoteData : note);
+        setNotes(updatedNotes);
+    };
 
 
     const loadNotes = () => {
@@ -42,7 +52,7 @@ const NotesListPage = ({ notes, setNotes }) => {
                 {
                     notes.map((elm) => (
                         <Col key={elm._id} lg={3} md={4} sm={6} xs={12} className="my-masonry-grid_item">
-                            <NoteCard {...elm} deleteNote={deleteNote} />
+                            <NoteCard {...elm} deleteNote={deleteNote} updateNoteInList={updateNoteInList} />
                         </Col>
                     ))
                 }

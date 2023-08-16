@@ -1,46 +1,19 @@
-/* NoteEditForm.css */
+ .edit-note-form {
+     padding: 15px;
+     max-width: 800px;
+     border: none;
+     background-color: #fff;
+ }
 
-.edit-note-form {
-    background-color: white;
-    /* Fondo blanco */
-    border: 1px solid #ddd;
-    /* Borde suave */
-    padding: 10px;
-    /* Espacio interno */
-}
+ .note-title {
+     font-size: 1.2em;
+     color: #494949;
+ }
 
-.edit-note-input,
-.edit-note-textarea {
-    width: 100%;
-    /* Ocupar todo el ancho */
-    background-color: transparent;
-    /* Fondo transparente */
-    border: none;
-    /* Sin borde */
-    font-size: 1rem;
-    /* Tamaño de fuente similar al texto */
-    padding: 0;
-    /* Sin espacio interno */
-    resize: none;
-    /* No permitir redimensionar el textarea */
-}
-
-.save-changes-button {
-    background-color: #007bff;
-    /* Azul brillante similar a Bootstrap */
-    color: white;
-    /* Texto blanco */
-    border: none;
-    /* Sin borde */
-    padding: 8px 16px;
-    /* Espacio interno */
-    cursor: pointer;
-    /* Cambiar a cursor de mano al pasar por encima */
-    transition: background-color 0.3s;
-    /* Transición suave en el color de fondo */
-}
-
-.save-changes-button:hover {
-    background-color: #0056b3;
-    /* Color más oscuro al pasar por encima */
-}
+ .note-body {
+     font-size: 16px;
+     border: none;
+     outline: none;
+     width: 100%;
+     resize: none;
+ }

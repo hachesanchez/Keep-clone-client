@@ -4,7 +4,7 @@ import notesService from '../../../services/notes.services'
 import './NoteEditForm.css'
 
 
-const NoteEditForm = ({ initialTitle, initialBody, noteId }) => {
+const NoteEditForm = ({ initialTitle, initialBody, noteId, updateNoteInList }) => {
 
 
     const [editedData, setEditedData] = useState({
@@ -19,32 +19,51 @@ const NoteEditForm = ({ initialTitle, initialBody, noteId }) => {
     }
 
 
+    // const handleSubmit = (e) => {
+    //     e.preventDefault()
+
+    //     notesService
+    //         .editNote(noteId, editedData)
+    //         .then((response) => {
+    //             updateNoteInList(noteId)
+    //             console.log('Note edited successfully:', response.data)
+    //         })
+    //         .catch((err) => {
+    //             console.error('Error editing note:', err)
+    //         })
+    // }
     const handleSubmit = (e) => {
-        e.preventDefault()
+        e.preventDefault();
 
         notesService
             .editNote(noteId, editedData)
             .then((response) => {
-                console.log('Note edited successfully:', response.data)
-                // You might want to add a callback to update the UI or close the modal here
+                const updatedNote = {
+                    _id: noteId,
+                    title: editedData.title,
+                    body: editedData.body
+                };
+                updateNoteInList(updatedNote);
+                console.log('Note edited successfully:', response.data);
             })
             .catch((err) => {
-                console.error('Error editing note:', err)
-            })
-    }
+                console.error('Error editing note:', err);
+            });
+    };
 
 
 
     return (
 
         <div>
-            {/* <Form onSubmit={handleSubmit} className="edit-note-form">
+            <Form onSubmit={handleSubmit} className="edit-note-form">
                 <Form.Group className="mb-3" controlId="title">
                     <Form.Control
                         type="text"
                         value={editedData.title}
                         onChange={handleInputChange}
                         name="title"
+                        className='note-title'
                     />
                 </Form.Group>
                 <FormGroup className='mb-3' controlId='body'>
@@ -53,33 +72,11 @@ const NoteEditForm = ({ initialTitle, initialBody, noteId }) => {
                         value={editedData.body}
                         onChange={handleInputChange}
                         name="body"
+                        className='note-body'
                     />
                 </FormGroup>
-                <button type="submit">Save Changes</button>
-            </Form> */}
-
-
-
-            <div>
-                <div className="edit-note-form">
-                    <input
-                        type="text"
-                        value={editedData.title}
-                        onChange={handleInputChange}
-                        name="title"
-                        className="edit-note-input"
-                    />
-                    <textarea
-                        value={editedData.body}
-                        onChange={handleInputChange}
-                        name="body"
-                        className="edit-note-textarea"
-                    />
-                    <button onClick={handleSubmit} className="save-changes-button">
-                        Save Changes
-                    </button>
-                </div>
-            </div>
+                <button type="submit" style={{ display: 'none' }} />
+            </Form>
 
         </div>
     )
