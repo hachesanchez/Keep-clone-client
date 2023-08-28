@@ -3,9 +3,13 @@
     width: 200px;
     color: black;
     font-family: Arial, sans-serif;
-    font-size: 15px;
+    font-size: 13px;
     padding: 20px;
     font-weight: 500;
+}
+
+.sidebar-box {
+    align-items: center;
 }
 
 .sidebar-link {
@@ -16,3 +20,13 @@
 .content {
     height: 100vh;
 }
+
+.sidebar-icons {
+    max-width: 20px;
+    margin-right: 10px;
+}
+
+/* .sidebar-entries {
+    justify-content: center;
+    align-items: center;
+} */

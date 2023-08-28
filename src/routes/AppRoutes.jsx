@@ -4,12 +4,14 @@ import NewNotePage from '../pages/NewNotePage/NewNotePage'
 import HomePage from '../pages/HomePage/HomePage'
 
 const AppRoutes = () => {
+
     return (
 
         <Routes>
 
             <Route path="/acceder" element={<h1 >ACCEDER Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam ipsum hic quis esse totam! Enim, ab nobis corrupti ullam fugit error beatae, obcaecati voluptatem sit voluptatum officia non facilis delectus.</h1>} />
             <Route path='/registro' element={<h1>REGISTRO</h1>} />
+
             <Route path='/' element={<HomePage />} />
             <Route path='/notas' element={<NotesListPage />} />
             <Route path='/recordatorios' element={<h1>RECORDATORIOS</h1>} />

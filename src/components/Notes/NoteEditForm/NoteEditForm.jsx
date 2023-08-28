@@ -4,7 +4,7 @@ import notesService from '../../../services/notes.services'
 import './NoteEditForm.css'
 
 
-const NoteEditForm = ({ initialTitle, initialBody, noteId, updateNoteInList }) => {
+const NoteEditForm = ({ initialTitle, initialBody, noteId, updateEditedNoteInList }) => {
 
 
     const [editedData, setEditedData] = useState({
@@ -19,21 +19,8 @@ const NoteEditForm = ({ initialTitle, initialBody, noteId, updateNoteInList }) =
     }
 
 
-    // const handleSubmit = (e) => {
-    //     e.preventDefault()
-
-    //     notesService
-    //         .editNote(noteId, editedData)
-    //         .then((response) => {
-    //             updateNoteInList(noteId)
-    //             console.log('Note edited successfully:', response.data)
-    //         })
-    //         .catch((err) => {
-    //             console.error('Error editing note:', err)
-    //         })
-    // }
     const handleSubmit = (e) => {
-        e.preventDefault();
+        e.preventDefault()
 
         notesService
             .editNote(noteId, editedData)
@@ -42,14 +29,14 @@ const NoteEditForm = ({ initialTitle, initialBody, noteId, updateNoteInList }) =
                     _id: noteId,
                     title: editedData.title,
                     body: editedData.body
-                };
-                updateNoteInList(updatedNote);
-                console.log('Note edited successfully:', response.data);
+                }
+                updateEditedNoteInList(updatedNote)
+                console.log('Note edited successfully:', response.data)
             })
             .catch((err) => {
-                console.error('Error editing note:', err);
-            });
-    };
+                console.error('Error editing note:', err)
+            })
+    }
 
 
 

@@ -8,7 +8,8 @@ import NoteEditForm from '../NoteEditForm/NoteEditForm'
 import './NoteCard.css'
 
 
-const NoteCard = ({ _id, title, body, deleteNote, updateNoteInList }) => {
+const NoteCard = ({ _id, title, body, deleteNote, updateEditedNoteInList }) => {
+
 
     const [showModal, setShowModal] = useState(false)
     const [editing, setEditing] = useState(false)
@@ -18,7 +19,7 @@ const NoteCard = ({ _id, title, body, deleteNote, updateNoteInList }) => {
     }
 
     const handleModalClose = () => {
-        updateNoteInList({ _id, title, body })
+        updateEditedNoteInList({ _id, title, body })
         setShowModal(false)
         setEditing(false)
     }
@@ -35,29 +36,30 @@ const NoteCard = ({ _id, title, body, deleteNote, updateNoteInList }) => {
                 <Card.Title className='p-3'>
                     <h3 className='card-title'>{title}</h3>
                 </Card.Title>
-                <Card.Text>
-                    <p className='card-body'>{body}</p>
-                </Card.Text>
+                <Card.Text className='card-body'>{body}</Card.Text>
             </Card>
 
+
             <Modal
-                show={showModal}
-                onHide={handleModalClose}
-                aria-labelledby='contained-modal-title-vcenter'
-                centered
-                dialogClassName='custom-modal'
+                show={showModal} onHide={handleModalClose} aria-labelledby='contained-modal-title-vcenter'
+                centered dialogClassName='custom-modal'
             >
                 <Modal.Body>
+
                     {editing ? (
                         <NoteEditForm
                             initialTitle={title}
                             initialBody={body}
                             noteId={_id}
-                            updateNoteInList={updateNoteInList}
+                            updateEditedNoteInList={updateEditedNoteInList}
                         />
                     ) : (
-                        <NoteDetails title={title} body={body} onClick={handleEditNote} />
+                        <NoteDetails
+                            title={title}
+                            body={body}
+                            onClick={handleEditNote} />
                     )}
+
                     <div className='note-icons'>
                         <Button variant='link'>
                             <img src={reminderIcon} alt='Reminder' className='reminder-icon' />
@@ -69,15 +71,11 @@ const NoteCard = ({ _id, title, body, deleteNote, updateNoteInList }) => {
                             <img src={deleteIcon} alt='Delete' className='delete-icon' />
                         </Button>
                         <Button
-                            className='close-modal-btn'
-                            variant='link'
-                            onClick={() => {
-                                handleModalClose()
-                            }}
-                        >
-                            Cerrar
+                            className='close-modal-btn' variant='link' onClick={() => { handleModalClose() }}
+                        > Cerrar
                         </Button>
                     </div>
+
                 </Modal.Body>
             </Modal>
         </>

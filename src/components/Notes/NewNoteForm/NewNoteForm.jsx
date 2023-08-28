@@ -1,26 +1,31 @@
 import { Form, Button } from "react-bootstrap"
 import { useState } from "react"
-import "./NewNoteForm.css"
 import notesService from "../../../services/notes.services"
+import "./NewNoteForm.css"
 
 
 const NewNoteForm = ({ updateNotes }) => {
+
 
     const [noteData, setNoteData] = useState({
         title: '',
         body: ''
     })
 
+
     const [isExpanded, setIsExpanded] = useState(false)
+
 
     const handleInputChange = e => {
         const { name, value } = e.target
         setNoteData({ ...noteData, [name]: value })
     }
 
+
     const handleddANoteClick = e => {
         setIsExpanded(true)
     }
+
 
     const handleSubmit = e => {
         e.preventDefault()
@@ -37,11 +42,6 @@ const NewNoteForm = ({ updateNotes }) => {
             })
             .catch((err) => console.log(err))
     }
-
-    // const handleKeyPress = e => {
-    //     e.key === 'Enter' &&
-    //         handleSubmit()
-    // }
 
 
     return (
@@ -74,7 +74,6 @@ const NewNoteForm = ({ updateNotes }) => {
                         value={noteData.body}
                         onChange={handleInputChange}
                         onClick={handleddANoteClick}
-                    // onKeyDown={handleKeyPress}
                     />
                 </Form.Group>
 

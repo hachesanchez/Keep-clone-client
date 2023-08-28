@@ -1,9 +1,9 @@
 import { Container, Row, Col } from "react-bootstrap"
-import "./HomePage.css"
 import NotesListPage from "../NotesListPage/NotesListPage"
 import Sidebar from "../../components/Sidebar/Sidebar"
 import NewNotePage from "../NewNotePage/NewNotePage"
 import { useState } from "react"
+import "./HomePage.css"
 
 
 const HomePage = () => {
@@ -18,10 +18,10 @@ const HomePage = () => {
 
         <Container>
             <Row className="">
-                <Col md={2} >
+                <Col md={4} sm={4} >
                     <Sidebar />
                 </Col>
-                <Col md={9} sm={12} className="offset-md-1">
+                <Col md={8} sm={12} className="offset-md-1">
                     <Row className="p-3">
                         <NewNotePage updateNotes={updateNotes} />
                     </Row>
