@@ -1,5 +1,5 @@
 import { useEffect } from "react"
-import { Row, Col } from "react-bootstrap"
+import { Row, Col, Container } from "react-bootstrap"
 import notesService from "../../services/notes.services"
 import NoteCard from "../../components/Notes/NoteCard/NoteCard"
 import "./NotesListPage.css"

@@ -13,6 +13,12 @@ const NoteCard = ({ _id, title, body, deleteNote, updateEditedNoteInList }) => {
 
     const [showModal, setShowModal] = useState(false)
     const [editing, setEditing] = useState(false)
+    const [isHovered, setIsHovered] = useState(false)
+
+    const handleMouseEnter = () => { setIsHovered(true) }
+    const handleMouseLeave = () => { setIsHovered(false) }
+
+    const shadowClass = isHovered ? 'shadow' : 'shadow-sm'
 
     const handleModalOpen = () => {
         setShowModal(true)
@@ -32,11 +38,16 @@ const NoteCard = ({ _id, title, body, deleteNote, updateEditedNoteInList }) => {
     return (
 
         <>
-            <Card className='p-1 mb-3' onClick={handleModalOpen}>
+            <Card className={`p-1 mb-3' ${shadowClass}`}
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
+                onClick={handleModalOpen}>
+
                 <Card.Title className='p-3'>
                     <h3 className='card-title'>{title}</h3>
                 </Card.Title>
                 <Card.Text className='card-body'>{body}</Card.Text>
+
             </Card>
 
 

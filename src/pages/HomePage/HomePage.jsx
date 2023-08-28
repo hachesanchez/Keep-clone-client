@@ -1,4 +1,4 @@
-import { Container, Row, Col } from "react-bootstrap"
+import { Row, Col, Container } from "react-bootstrap"
 import NotesListPage from "../NotesListPage/NotesListPage"
 import Sidebar from "../../components/Sidebar/Sidebar"
 import NewNotePage from "../NewNotePage/NewNotePage"
@@ -16,21 +16,23 @@ const HomePage = () => {
 
     return (
 
-        <Container>
+        <div>
             <Row className="">
-                <Col md={4} sm={4} >
+                <Col md={2} sm={12} >
                     <Sidebar />
                 </Col>
                 <Col md={8} sm={12} className="offset-md-1">
-                    <Row className="p-3">
-                        <NewNotePage updateNotes={updateNotes} />
-                    </Row>
-                    <Row>
-                        <NotesListPage notes={notes} setNotes={setNotes} />
-                    </Row>
+                    <Container>
+                        <Row className="p-3">
+                            <NewNotePage updateNotes={updateNotes} />
+                        </Row>
+                        <Row>
+                            <NotesListPage notes={notes} setNotes={setNotes} />
+                        </Row>
+                    </Container>
                 </Col>
             </Row>
-        </Container>
+        </div>
     )
 }
 
