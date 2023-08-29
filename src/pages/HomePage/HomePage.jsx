@@ -2,13 +2,15 @@ import { Row, Col, Container } from "react-bootstrap"
 import NotesListPage from "../NotesListPage/NotesListPage"
 import Sidebar from "../../components/Sidebar/Sidebar"
 import NewNotePage from "../NewNotePage/NewNotePage"
-import { useState } from "react"
+import { useContext, useState } from "react"
 import "./HomePage.css"
 
 
 const HomePage = () => {
 
     const [notes, setNotes] = useState([])
+    // const [notes, setNotes] = useContext()
+
 
     const updateNotes = (newNote) => {
         setNotes([newNote, ...notes,])

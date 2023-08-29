@@ -3,7 +3,7 @@ import NotesListPage from '../pages/NotesListPage/NotesListPage'
 import NewNotePage from '../pages/NewNotePage/NewNotePage'
 import HomePage from '../pages/HomePage/HomePage'
 
-const AppRoutes = () => {
+const AppRoutes = ({ searchTerm }) => {
 
     return (
 
@@ -13,7 +13,7 @@ const AppRoutes = () => {
             <Route path='/registro' element={<h1>REGISTRO</h1>} />
 
             <Route path='/' element={<HomePage />} />
-            <Route path='/notas' element={<NotesListPage />} />
+            <Route path='/notas' element={<NotesListPage searchTerm={searchTerm} />} />
             <Route path='/recordatorios' element={<h1>RECORDATORIOS</h1>} />
             <Route path='/archivadas' element={<h1>ARCHIVADAS</h1>} />
             <Route path='/papelera' element={<h1>BASURILLA</h1>} />

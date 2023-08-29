@@ -6,16 +6,14 @@ import searchIcon from '../../assets/images/icons8-search-50.png'
 import './Navigation.css'
 
 
-const Navigation = () => {
+const Navigation = ({ onFilter, searchTerm }) => {
 
-    // const [searchTerm, setSearchTerm] = useState('')
 
-    // const handleSearchChange = (e) => {
-    //     const inputValue = e.target.value
-    //     setSearchTerm(inputValue)
-    //     filterNotesBySearchTerm(inputValue)
+    const handleSearchChange = (e) => {
+        const inputValue = e.target.value
+        onFilter(inputValue)
 
-    // }
+    }
 
     return (
 
@@ -38,9 +36,9 @@ const Navigation = () => {
                             type="search"
                             placeholder="Busca lo que quieras"
                             className="search-form"
-                            aria-label="Search"
-                        // value={searchTerm}
-                        // onChange={handleSearchChange}
+                            aria-label="text"
+                            value={searchTerm}
+                            onChange={handleSearchChange}
                         />
                     </Form>
                 </Nav>
