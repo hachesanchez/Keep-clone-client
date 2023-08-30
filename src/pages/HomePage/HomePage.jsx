@@ -11,7 +11,6 @@ const HomePage = () => {
     const [notes, setNotes] = useState([])
     // const [notes, setNotes] = useContext()
 
-
     const updateNotes = (newNote) => {
         setNotes([newNote, ...notes,])
     }

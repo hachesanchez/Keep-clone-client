@@ -47,17 +47,15 @@ const NotesListPage = ({ notes, setNotes, searchTerm }) => {
     }
 
     const filteredNotesBySearchTerm = (term) => {
-        if (notes) {
-            const filtered = notes.filter(
-                (note) =>
-                    note.title
-                // (note.title && note.title.toLowerCase().includes(term.toLowerCase())) ||
-                // (note.body && note.body.toLowerCase().includes(term.toLowerCase()))
-            )
-            console.log('las notes--------------', notes)
-            console.log('las filtered--------------', filtered)
-            setFileteredNotes(filtered);
-        }
+        const filtered = notes.filter(
+            (note) =>
+                note.title
+            // (note.title?.toLowerCase()?.includes(term.toLowerCase())) ||
+            // (note.body?.toLowerCase()?.includes(term.toLowerCase()))
+        );
+        console.log('las notes--------------', notes)
+        setFileteredNotes(filtered);
+
     }
 
     return (
