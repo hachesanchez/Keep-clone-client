@@ -8,11 +8,14 @@ import "./NotesListPage.css"
 
 const NotesListPage = ({ notes, setNotes, searchTerm }) => {
 
+
     const [filteredNotes, setFileteredNotes] = useState([])
+
 
     useEffect(() => {
         loadNotes()
     }, [])
+
 
     useEffect(() => {
         filteredNotesBySearchTerm(searchTerm)
@@ -46,15 +49,12 @@ const NotesListPage = ({ notes, setNotes, searchTerm }) => {
             .catch((err) => console.log(err))
     }
 
-    const filteredNotesBySearchTerm = (term) => {
-        const filtered = notes.filter(
-            (note) =>
-                note.title
-            // (note.title?.toLowerCase()?.includes(term.toLowerCase())) ||
-            // (note.body?.toLowerCase()?.includes(term.toLowerCase()))
-        );
-        console.log('las notes--------------', notes)
-        setFileteredNotes(filtered);
+
+    const filteredNotesBySearchTerm = (query) => {
+        const filteredNotes = notes.filter((note) =>
+            note.title.toLowerCase().includes(query) || note.body.toLowerCase().includes(query)
+        )
+        setFileteredNotes(filteredNotes)
 
     }
 

@@ -7,6 +7,7 @@ import Tutorial from '../NO/Training/Tutorial'
 
 const AppRoutes = ({ searchTerm }) => {
 
+
     return (
 
         <Routes>
@@ -14,7 +15,7 @@ const AppRoutes = ({ searchTerm }) => {
             <Route path="/acceder" element={<h1 >ACCEDER Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quibusdam ipsum hic quis esse totam! Enim, ab nobis corrupti ullam fugit error beatae, obcaecati voluptatem sit voluptatum officia non facilis delectus.</h1>} />
             <Route path='/registro' element={<h1>REGISTRO</h1>} />
 
-            <Route path='/' element={<HomePage />} />
+            <Route path='/' element={<HomePage searchTerm={searchTerm} />} />
             <Route path='/notas' element={<NotesListPage searchTerm={searchTerm} />} />
             <Route path='/recordatorios' element={<h1>RECORDATORIOS</h1>} />
             <Route path='/archivadas' element={<h1>ARCHIVADAS</h1>} />

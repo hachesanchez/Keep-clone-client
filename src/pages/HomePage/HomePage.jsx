@@ -6,7 +6,8 @@ import { useContext, useState } from "react"
 import "./HomePage.css"
 
 
-const HomePage = () => {
+const HomePage = ({ searchTerm }) => {
+
 
     const [notes, setNotes] = useState([])
     // const [notes, setNotes] = useContext()
@@ -28,7 +29,7 @@ const HomePage = () => {
                             <NewNotePage updateNotes={updateNotes} />
                         </Row>
                         <Row>
-                            <NotesListPage notes={notes} setNotes={setNotes} />
+                            <NotesListPage notes={notes} setNotes={setNotes} searchTerm={searchTerm} />
                         </Row>
                     </Container>
                 </Col>

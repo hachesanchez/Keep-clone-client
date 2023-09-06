@@ -16,7 +16,7 @@ function App() {
     // <NoteProvider>
     <div className="App">
 
-      <Navigation onFilter={setSearchTerm} searchTerm={searchTerm} />
+      <Navigation setSearchTerm={setSearchTerm} searchTerm={searchTerm} />
       <AppRoutes searchTerm={searchTerm} />
 
     </div>

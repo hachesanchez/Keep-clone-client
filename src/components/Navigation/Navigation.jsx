@@ -6,14 +6,14 @@ import searchIcon from '../../assets/images/icons8-search-50.png'
 import './Navigation.css'
 
 
-const Navigation = ({ onFilter, searchTerm }) => {
+const Navigation = ({ setSearchTerm, searchTerm }) => {
 
 
-    const handleSearchChange = (e) => {
-        const inputValue = e.target.value
-        onFilter(inputValue)
-
+    const handleInputValue = (e) => {
+        const { value } = e.target
+        setSearchTerm(value)
     }
+
 
     return (
 
@@ -30,7 +30,7 @@ const Navigation = ({ onFilter, searchTerm }) => {
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="me-auto">
-                    <Form className="search-bar d-flex align-items-center">
+                    <Form className="search-bar d-flex align-items-center"  >
                         <img src={searchIcon} width="20" height="20" className="d-inline-block search-icon" alt="Search icon" />
                         <Form.Control
                             type="search"
@@ -38,7 +38,7 @@ const Navigation = ({ onFilter, searchTerm }) => {
                             className="search-form"
                             aria-label="text"
                             value={searchTerm}
-                            onChange={handleSearchChange}
+                            onChange={handleInputValue}
                         />
                     </Form>
                 </Nav>
