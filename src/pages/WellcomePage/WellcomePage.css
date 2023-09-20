@@ -1,0 +1,14 @@
+  .wellcome-page {
+    background-color: #ebeef2;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+  }
+
+  /* .wellcome-page-container {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+  } */

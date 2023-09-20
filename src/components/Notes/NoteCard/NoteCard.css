@@ -50,6 +50,11 @@
     height: 20px;
 }
 
+.tag-icon {
+    width: 20px;
+    height: 20px;
+}
+
 .close-modal-btn {
     text-decoration: none;
     color: rgba(0, 0, 0, .87);

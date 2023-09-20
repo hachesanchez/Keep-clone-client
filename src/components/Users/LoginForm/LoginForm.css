@@ -1,0 +1,14 @@
+.form-container {
+    background-color: white;
+    box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.2);
+    padding: 80px;
+    align-items: center;
+}
+
+.button-login {
+    text-decoration: none;
+    background-color: #F9DD8F;
+    color: gray;
+    font-weight: bold;
+    margin-top: 10px;
+}

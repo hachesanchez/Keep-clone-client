@@ -10,7 +10,6 @@ const HomePage = ({ searchTerm }) => {
 
 
     const [notes, setNotes] = useState([])
-    // const [notes, setNotes] = useContext()
 
     const updateNotes = (newNote) => {
         setNotes([newNote, ...notes,])

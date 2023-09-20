@@ -3,6 +3,7 @@ import { Navbar, Nav, Form } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import keepLogo from '../../assets/images/keep_logo.png'
 import searchIcon from '../../assets/images/icons8-search-50.png'
+import fakeAvatar from '../../assets/images/H_perfil_BAJA-54.jpg'
 import './Navigation.css'
 
 
@@ -43,6 +44,9 @@ const Navigation = ({ setSearchTerm, searchTerm }) => {
                     </Form>
                 </Nav>
             </Navbar.Collapse>
+            <Navbar.Brand as={Link} to="/perfil">
+                <img src={fakeAvatar} className='navbar-avatar' />
+            </Navbar.Brand>
 
         </Navbar>
     )

@@ -18,7 +18,7 @@ const Sidebar = () => {
 
             <Row className='sidebar-box'>
                 <Col className='sidebar-entries' >
-                    <NavLink to="/" className="sidebar-link" activeClassName='active'>
+                    <NavLink to="/" className="sidebar-link" activeclassname='active'>
                         <img className='sidebar-icons' src={notesIcon} alt='Notes Icon' />
                         Notas
                     </NavLink>
@@ -26,7 +26,7 @@ const Sidebar = () => {
             </Row>
             <Row className='sidebar-box'>
                 <Col className='sidebar-entries'>
-                    <NavLink to="/recordatorios" className="sidebar-link" activeClassName='active'>
+                    <NavLink to="/recordatorios" className="sidebar-link" activeclassname='active'>
                         <img className='sidebar-icons' src={reminderIcon} alt='Reminder Icon' />
                         Recordatorios
                     </NavLink>
@@ -34,7 +34,7 @@ const Sidebar = () => {
             </Row>
             <Row className='sidebar-box'>
                 <Col className='sidebar-entries'>
-                    <NavLink to="/editar-etiquetas" className="sidebar-link" activeClassName='active'>
+                    <NavLink to="/editar-etiquetas" className="sidebar-link" activeclassname='active'>
                         <img className='sidebar-icons' src={editIcon} alt='Tag Icon' />
                         Editar tags
                     </NavLink>
@@ -42,7 +42,7 @@ const Sidebar = () => {
             </Row>
             <Row className='sidebar-box'>
                 <Col className='sidebar-entries'>
-                    <NavLink to="/archivadas" className="sidebar-link" activeClassName='active'>
+                    <NavLink to="/archivadas" className="sidebar-link" activeclassname='active'>
                         <img className='sidebar-icons' src={archiveIcon} alt='Archive icon' />
                         Notas archivadas
                     </NavLink>
@@ -50,7 +50,7 @@ const Sidebar = () => {
             </Row>
             <Row className='sidebar-box'>
                 <Col className='sidebar-entries'>
-                    <NavLink as={Link} to="/papelera" className="sidebar-link" activeClassName='active'>
+                    <NavLink as={Link} to="/papelera" className="sidebar-link" activeclassname='active'>
                         <img className='sidebar-icons' src={binIcon} alt='Bin Icon' />
                         Papelera
                     </NavLink>
