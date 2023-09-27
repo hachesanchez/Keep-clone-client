@@ -20,11 +20,18 @@ const LoginForm = () => {
         authService
             .login(loginData)
             .then(({ data }) => {
+                localStorage.setItem('authToken', data.authToken)
+
+                authService
+                    .verify(data.authToken)
+                    .then(({ data }) => console.log('a ver el fakin user', data))
+
+
                 console.log('respuestaaaa', data)
                 console.log('logindata', loginData)
                 // storeToken(data.authToken)
                 // authenticateUser()
-                navigate('/inicio')
+                navigate('/')
             })
             .catch(err => console.log(err))
     }

@@ -23,7 +23,7 @@ const AppRoutes = ({ searchTerm }) => {
             <Route path='/recordatorios' element={<h1>RECORDATORIOS</h1>} />
             <Route path='/archivadas' element={<h1>ARCHIVADAS</h1>} />
             {/* <Route path='/papelera' element={<h1>BASURILLA</h1>} /> */}
-            <Route path='/papelera' element={<Tutorial />} />
+            {/* <Route path='/papelera' element={<Tutorial />} /> */}
             <Route path='/etiqueta/:id' element={<h1>TAG WHATEVER</h1>} />
             {/* <Route path='/crear-nota' element={<NewNotePage />} /> */}
 
