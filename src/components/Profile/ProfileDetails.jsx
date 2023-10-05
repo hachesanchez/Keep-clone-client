@@ -1,25 +1,33 @@
-import fakeAvatar from '../../assets/images/H_perfil_BAJA-54.jpg'
 import { Row, Col } from "react-bootstrap"
-
+import React, { useContext } from 'react'
+import { AuthContext } from '../../contexts/AuthContex'
 import './ProfileDetails.css'
-import React from 'react'
 
 
 const ProfileDetails = () => {
 
+    const { user } = useContext(AuthContext)
+    console.log(user)
+
+
+
     return (
 
         <>
-            <Row className='profile-container'>
-                <Col>
-                    <img src={fakeAvatar} className='profile-avatar' />
-                </Col>
-                <Col>
-                    <p>First name: </p>
-                    <p>Last name: </p>
-                    <p>Email: </p>
-                </Col>
-            </Row>
+            {user ? (
+                <Row className='profile-container'>
+                    <Col>
+                        <img src={user.avatar} className='profile-avatar' alt="User Avatar" />
+                    </Col>
+                    <Col>
+                        <p>First name: <strong> {user.firstName} </strong></p>
+                        <p>Last name: <strong> {user.lastName} </strong></p>
+                        <p>Email: <strong> {user.email} </strong></p>
+                    </Col>
+                </Row>
+            ) : (
+                <p>There's no user logged in ohhh</p>
+            )}
         </>
     )
 }
