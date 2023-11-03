@@ -2,7 +2,7 @@ import { Row, Col, Container } from "react-bootstrap"
 import NotesListPage from "../NotesListPage/NotesListPage"
 import Sidebar from "../../components/Sidebar/Sidebar"
 import NewNotePage from "../NewNotePage/NewNotePage"
-import { useContext, useState } from "react"
+import { useState } from "react"
 import "./HomePage.css"
 
 

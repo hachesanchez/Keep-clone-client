@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react"
-import { Row, Col, Container } from "react-bootstrap"
+import { Row, Col } from "react-bootstrap"
 import notesService from "../../services/notes.services"
 import NoteCard from "../../components/Notes/NoteCard/NoteCard"
-import Masonry from "react-masonry-css"
+//import Masonry from "react-masonry-css"
 import "./NotesListPage.css"
 
 

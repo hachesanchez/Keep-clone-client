@@ -6,7 +6,7 @@ import binIcon from '../../assets/images/icons8-bin-32.png'
 import editIcon from '../../assets/images/icons8-edit-32.png'
 import reminderIcon from '../../assets/images/icons8-notification-32.png'
 import archiveIcon from '../../assets/images/icons8-folder-32.png'
-import tagIcon from '../../assets/images/icons8-tag-32.png'
+//import tagIcon from '../../assets/images/icons8-tag-32.png'
 import './Sidebar.css'
 
 
